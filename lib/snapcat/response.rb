@@ -32,15 +32,11 @@ module Snapcat
     end
 
     def formatted_result(response)
-      if !response_empty?(response) && recognized_content_type?(response.content_type)
+      if !response_empty?(response)
         format_recognized_content(response.content_type, response.body)
       else
         {}
       end
-    end
-
-    def recognized_content_type?(content_type)
-      RECOGNIZED_CONTENT_TYPES.include? content_type
     end
 
     def response_empty?(response)
