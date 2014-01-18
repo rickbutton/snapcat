@@ -13,7 +13,8 @@ module Snapcat
       sn: :sender,
       st: :status,
       sts: :sent,
-      ts: :opened
+      ts: :opened,
+      t: :duration
     }
 
     attr_reader *ALLOWED_FIELD_CONVERSIONS.values
