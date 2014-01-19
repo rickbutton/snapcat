@@ -27,6 +27,7 @@ module Snapcat
       if content_type.start_with? 'application/json'
         JSON.parse(content, symbolize_names: true)
       else
+        puts "media type: #{content_type}, content: #{content}"
         { media: Media.new(content) }
       end
     end
